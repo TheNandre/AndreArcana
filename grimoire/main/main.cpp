@@ -1,5 +1,5 @@
 #include <QApplication>
-#include "../grimoire.h"
+#include "../src/grimoire.h"
 
 int main( int argc, char* argv[] )
 {

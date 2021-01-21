@@ -1,5 +1,5 @@
 cmake_minimum_required( VERSION 3.16 )
-project( grimoire )
+project( ink )
 
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
@@ -10,15 +10,14 @@ set(CMAKE_AUTOUIC ON)
 
 find_package(Qt6 COMPONENTS Widgets REQUIRED)
 
-set( GRIMOIRE_HDR
-    grimoire.h
+set( INK_HDRS
+    include/arcanabase.h
+    include/misfire.h
     )
 
-set( GRIMOIRE_SRC
-    main/main.cpp
-    grimoire.cpp
+set( INK_SRCS
     )
 
-add_executable( ${PROJECT_NAME} ${GRIMOIRE_HDR} ${GRIMOIRE_SRC} )
+add_library( ${PROJECT_NAME} SHARED ${INK_HDRS} ${INK_SRCS} )
 
 target_link_libraries(${PROJECT_NAME} Qt6::Widgets)
