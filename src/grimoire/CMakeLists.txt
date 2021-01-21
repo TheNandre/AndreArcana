@@ -11,12 +11,14 @@ set(CMAKE_AUTOUIC ON)
 find_package(Qt6 COMPONENTS Widgets REQUIRED)
 
 set( GRIMOIRE_HDR
+    grimoire.h
     )
 
 set( GRIMOIRE_SRC
     main/main.cpp
+    grimoire.cpp
     )
 
-add_executable( ${PROJECT_NAME} ${GRIMOIRE_SRC} ${GRIMOIRE_HDR} )
+add_executable( ${PROJECT_NAME} ${GRIMOIRE_HDR} ${GRIMOIRE_SRC} )
 
 target_link_libraries(${PROJECT_NAME} Qt6::Widgets)

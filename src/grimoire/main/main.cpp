@@ -1,6 +1,12 @@
+#include <QApplication>
+#include "../grimoire.h"
 
-
-int main( const int argc, char* argv[] )
+int main( int argc, char* argv[] )
 {
-    return 0;
+    QApplication a{ argc, argv };
+
+    Grimoire g;
+    g.showMaximized();
+
+    return a.exec();
 }
