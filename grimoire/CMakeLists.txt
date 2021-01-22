@@ -14,6 +14,7 @@ set( GRIMOIRE_HDRS
     src/grimoire.h
     src/processexitmanager.h
     src/misfiremanager.h
+    src/cover.h
     )
 
 set( GRIMOIRE_SRCS
@@ -21,6 +22,7 @@ set( GRIMOIRE_SRCS
     src/grimoire.cpp
     src/processexitmanager.cpp
     src/misfiremanager.cpp
+    src/cover.cpp
     )
 
 add_executable( ${PROJECT_NAME} ${GRIMOIRE_HDRS} ${GRIMOIRE_SRCS} )
