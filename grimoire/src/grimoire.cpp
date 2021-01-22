@@ -12,6 +12,11 @@ Grimoire::Grimoire()
     frontCover_->open( this, SLOT( initialize() ) );
 }
 
+void Grimoire::onMisfire( const Misfire& misfire )
+{
+    misfireManager_->onMisfire( misfire );
+}
+
 void Grimoire::initialize()
 {
     if( !misfireManager_->initialize() ) {

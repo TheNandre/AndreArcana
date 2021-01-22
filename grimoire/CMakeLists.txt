@@ -10,6 +10,8 @@ set(CMAKE_AUTOUIC ON)
 
 find_package(Qt6 COMPONENTS Widgets REQUIRED)
 
+include_directories( ../ink/include )
+
 set( GRIMOIRE_HDRS
     src/grimoire.h
     src/processexitmanager.h

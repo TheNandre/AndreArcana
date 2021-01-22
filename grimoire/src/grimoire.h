@@ -8,6 +8,7 @@
 #include "misfiremanager.h"
 
 class Cover;
+class Misfire;
 
 class Grimoire : public QMainWindow
 {
@@ -15,6 +16,9 @@ class Grimoire : public QMainWindow
 public:
     Grimoire();
     virtual ~Grimoire() override = default;
+
+public slots:
+    void onMisfire( const Misfire& misfire );
 
 private:
     QPointer<Cover> frontCover_;
