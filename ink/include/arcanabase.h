@@ -1,3 +1,6 @@
+#ifndef ARCANABASE_H
+#define ARCANABASE_H
+
 #include <QObject>
 
 class Misfire;
@@ -12,3 +15,5 @@ public:
 signals:
     void misfire( const Misfire& m );
 };
+
+#endif

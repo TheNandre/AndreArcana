@@ -5,7 +5,7 @@ int main( int argc, char* argv[] )
 {
     QApplication a{ argc, argv };
 
-    Grimoire g;
+    Grimoire g{};
     g.showMaximized();
 
     return a.exec();

@@ -10,12 +10,15 @@ set(CMAKE_AUTOUIC ON)
 
 find_package(Qt6 COMPONENTS Widgets REQUIRED)
 
+include_directories( include )
+
 set( INK_HDRS
     include/arcanabase.h
     include/misfire.h
     )
 
 set( INK_SRCS
+    src/misfire.cpp
     )
 
 add_library( ${PROJECT_NAME} SHARED ${INK_HDRS} ${INK_SRCS} )

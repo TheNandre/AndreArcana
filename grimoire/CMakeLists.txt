@@ -12,11 +12,15 @@ find_package(Qt6 COMPONENTS Widgets REQUIRED)
 
 set( GRIMOIRE_HDRS
     src/grimoire.h
+    src/processexitmanager.h
+    src/misfiremanager.h
     )
 
 set( GRIMOIRE_SRCS
     main/main.cpp
     src/grimoire.cpp
+    src/processexitmanager.cpp
+    src/misfiremanager.cpp
     )
 
 add_executable( ${PROJECT_NAME} ${GRIMOIRE_HDRS} ${GRIMOIRE_SRCS} )
