@@ -10,7 +10,12 @@
 class Cover;
 class Misfire;
 
+#ifdef BUILD_LAB
+#include "grimoire_global.h"
+class GRIMOIRE_EXPORT Grimoire : public QMainWindow
+#else
 class Grimoire : public QMainWindow
+#endif
 {
     Q_OBJECT
 public:

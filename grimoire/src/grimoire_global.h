@@ -1,0 +1,12 @@
+#ifndef GRIMOIRE_GLOBAL_H
+#define GRIMOIRE_GLOBAL_H
+
+#if BUILD_LAB
+#if defined(GRIMOIRE_LIBRARY)
+#  define GRIMOIRE_EXPORT Q_DECL_EXPORT
+#else
+#  define GRIMOIRE_EXPORT Q_DECL_IMPORT
+#endif
+#endif
+
+#endif // GRIMOIRE_GLOBAL_H

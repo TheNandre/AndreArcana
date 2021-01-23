@@ -1,6 +1,10 @@
 cmake_minimum_required( VERSION 3.16 )
 project( grimoire )
 
+if( BUILD_LAB )
+    add_compile_definitions( GRIMOIRE_LIBRARY )
+endif()
+
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
@@ -20,6 +24,7 @@ set( GRIMOIRE_HDRS
     src/processexitmanager.h
     src/misfiremanager.h
     src/cover.h
+    src/grimoire_global.h
     )
 
 set( GRIMOIRE_SRCS
