@@ -8,6 +8,9 @@ set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
 set(CMAKE_AUTOUIC ON)
 
+set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
+
 find_package(Qt6 COMPONENTS Widgets REQUIRED)
 
 include_directories( ../ink/include )
@@ -29,4 +32,5 @@ set( GRIMOIRE_SRCS
 
 add_executable( ${PROJECT_NAME} ${GRIMOIRE_HDRS} ${GRIMOIRE_SRCS} )
 
+target_link_libraries( ${PROJECT_NAME} ink )
 target_link_libraries(${PROJECT_NAME} Qt6::Widgets)

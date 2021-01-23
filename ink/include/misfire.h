@@ -1,9 +1,11 @@
 #ifndef MISFIRE_H
 #define MISFIRE_H
 
+#include "../src/inkdll_global.h"
+
 #include <QString>
 
-class Misfire
+class INK_EXPORT Misfire
 {
 public:
     Misfire() = delete;
