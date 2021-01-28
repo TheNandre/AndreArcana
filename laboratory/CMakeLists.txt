@@ -11,9 +11,19 @@ set(CMAKE_AUTOUIC ON)
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 
-find_package(Qt6 COMPONENTS Widgets REQUIRED)
+include_directories( ../grimoire/src
+    ../ink/include )
 
-add_executable( ${PROJECT_NAME} main.cpp )
+find_package(Qt6 COMPONENTS Widgets Test REQUIRED)
 
+set( LAB_HDRS
+    laboratory.h)
 
-target_link_libraries( ${PROJECT_NAME} Qt6::Widgets )
+set( LAB_SRCS
+    main.cpp
+    laboratory.cpp)
+
+add_executable( ${PROJECT_NAME} ${LAB_HDRS} ${LAB_SRCS} )
+
+target_link_libraries( ${PROJECT_NAME} ink grimoire )
+target_link_libraries( ${PROJECT_NAME} Qt6::Widgets Qt6::Test )

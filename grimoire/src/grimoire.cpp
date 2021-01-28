@@ -4,8 +4,9 @@
 #include "processexitmanager.h"
 #include "misfiremanager.h"
 
-Grimoire::Grimoire()
-    : frontCover_( new Cover{ this } ),
+Grimoire::Grimoire( QPointer<QWidget> parent )
+    : QMainWindow( parent ),
+      frontCover_( new Cover{ this } ),
       processExitManager_( std::make_unique<ProcessExitManager>() ),
       misfireManager_( std::make_unique<MisfireManager>() )
 {

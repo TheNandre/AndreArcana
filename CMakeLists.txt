@@ -1,6 +1,11 @@
 cmake_minimum_required( VERSION 3.16 )
 project(AndreArcana)
 
+option( BUILD_LAB "Build Testing" ON )
+if( BUILD_LAB )
+    add_definitions( -DBUILD_LAB )
+endif()
+
 add_subdirectory( ink )
 add_subdirectory( arcana )
 add_subdirectory( grimoire )

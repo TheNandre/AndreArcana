@@ -35,7 +35,11 @@ set( GRIMOIRE_SRCS
     src/cover.cpp
     )
 
-add_executable( ${PROJECT_NAME} ${GRIMOIRE_HDRS} ${GRIMOIRE_SRCS} )
+if( BUILD_LAB )
+    add_library( ${PROJECT_NAME} SHARED ${GRIMOIRE_HDRS} ${GRIMOIRE_SRCS} )
+else()
+    add_executable( ${PROJECT_NAME} ${GRIMOIRE_HDRS} ${GRIMOIRE_SRCS} )
+endif()
 
 target_link_libraries( ${PROJECT_NAME} ink )
 target_link_libraries(${PROJECT_NAME} Qt6::Widgets)

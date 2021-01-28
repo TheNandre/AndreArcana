@@ -19,7 +19,7 @@ class Grimoire : public QMainWindow
 {
     Q_OBJECT
 public:
-    Grimoire();
+    Grimoire( QPointer<QWidget> parent = nullptr );
     virtual ~Grimoire() override = default;
 
 public slots:

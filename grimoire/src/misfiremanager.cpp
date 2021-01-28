@@ -5,7 +5,7 @@
 #include "misfire.h"
 
 namespace {
-    constexpr auto logFolderName = "logs/";
+    constexpr auto logFolderName = "/logs/";
     const auto logFileFolderPath = QDir::currentPath() + logFolderName;
     namespace LogFile{
         constexpr auto logFileNameSuffix = "_AALogFile.txt";
