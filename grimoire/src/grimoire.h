@@ -5,10 +5,8 @@
 #include <QPointer>
 
 #include "processexitmanager.h"
-#include "misfiremanager.h"
 
 class Cover;
-class Misfire;
 
 #ifdef BUILD_LAB
 #include "grimoire_global.h"
@@ -22,13 +20,9 @@ public:
     Grimoire( QPointer<QWidget> parent = nullptr );
     virtual ~Grimoire() override = default;
 
-public slots:
-    void onMisfire( const Misfire& misfire );
-
 private:
     QPointer<Cover> frontCover_;
     std::unique_ptr<ProcessExitManager> processExitManager_;
-    std::unique_ptr<MisfireManager> misfireManager_;
 
 private slots:
     void initialize();

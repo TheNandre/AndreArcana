@@ -11,7 +11,7 @@ public:
     enum class ExitCodes
     {
         Success = 0,
-        MisfireManagerInitializationFailure = 100
+        ScribeInitializationFailure = 100
     };
 
     void exit( const ExitCodes code );

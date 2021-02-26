@@ -6,6 +6,8 @@ if( BUILD_LAB )
     add_definitions( -DBUILD_LAB )
 endif()
 
+include_directories( include )
+
 add_subdirectory( ink )
 add_subdirectory( arcana )
 add_subdirectory( grimoire )

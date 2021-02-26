@@ -22,7 +22,6 @@ include_directories( ../ink/include )
 set( GRIMOIRE_HDRS
     src/grimoire.h
     src/processexitmanager.h
-    src/misfiremanager.h
     src/cover.h
     src/grimoire_global.h
     )
@@ -31,7 +30,6 @@ set( GRIMOIRE_SRCS
     main/main.cpp
     src/grimoire.cpp
     src/processexitmanager.cpp
-    src/misfiremanager.cpp
     src/cover.cpp
     )
 

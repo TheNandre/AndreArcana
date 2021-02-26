@@ -19,12 +19,12 @@ include_directories( include )
 
 set( INK_HDRS
     include/arcanabase.h
-    include/misfire.h
     src/inkdll_global.h
+    include/scribe.h
     )
 
 set( INK_SRCS
-    src/misfire.cpp
+    src/scribe/scribe.cpp
     )
 
 add_library( ${PROJECT_NAME} SHARED ${INK_HDRS} ${INK_SRCS} )

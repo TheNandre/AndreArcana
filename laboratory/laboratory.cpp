@@ -7,7 +7,7 @@
 
 #include "grimoire.h"
 #include "cover.h"
-#include "misfire.h"
+#include "scribe.h"
 
 Laboratory::Laboratory()
 {
@@ -44,10 +44,12 @@ void Laboratory::coverTest()
     QVERIFY2( bSuccess, "Front Cover is pressed" );
 }
 
-void Laboratory::misfireTest()
+void Laboratory::scribeTest()
 {
-    Misfire misfire{ "Test" };
-    this->grimoire_->onMisfire( misfire );
+    Scribe::write( ScribeLevel::Debug, "Lab", "This is a Debug Message" );
+    Scribe::write( ScribeLevel::Info, "Lab", "This is an Info Message" );
+    Scribe::write( ScribeLevel::Warn, "Lab", "This is a Warn Message" );
+    Scribe::write( ScribeLevel::Misfire, "Lab", "This is a Misfire Message" );
 }
 
 void Laboratory::cleanupTestCase()
