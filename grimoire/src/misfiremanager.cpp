@@ -4,6 +4,11 @@
 
 #include "misfire.h"
 
+#define useDebug 1
+#if useDebug
+#include <QDebug>
+#endif
+
 namespace {
     constexpr auto logFolderName = "/logs/";
     const auto logFileFolderPath = QDir::currentPath() + logFolderName;
@@ -34,26 +39,34 @@ bool MisfireManager::initialize()
     }
 
     if( logFileName.isEmpty() ) {
-        logFileName = logFolderName + currentDate + LogFile::logFileNameSuffix;
+        logFileName = logFileFolderPath + currentDate + LogFile::logFileNameSuffix;
     }
 
-    qDebug() << "Log File Name" << logFileName;
-
     this->currentLogFile_.setFileName( logFileName );
+#if useDebug
+    qDebug() << "Log File Name:" << this->currentLogFile_.fileName();
+#endif
 
-    return this->currentLogFile_.open( QIODeviceBase::ReadWrite | QIODeviceBase::Append );
+    return this->currentLogFile_.open( QIODeviceBase::WriteOnly | QIODeviceBase::Append );
 }
 
 void MisfireManager::onMisfire( const Misfire& misfire )
 {
     if( this->currentLogFile_.isOpen() ) {
-        QTextStream logText{ &this->currentLogFile_ };
-        logText << misfire;
+#if useDebug
+        QFileInfo fileInfo{ this->currentLogFile_ };
+        qDebug() << "Current Log File Path:" << fileInfo.absoluteFilePath();
+        qDebug() << "Misfire:" << misfire;
+#endif
+        QTextStream stream{ this->currentLogFile_ };
     }
 }
 
 void MisfireManager::createLogFileFolder()
 {
+#if useDebug
+    qDebug() << "Log File Folder:" << logFileFolderPath;
+#endif
     QDir dir{ logFileFolderPath };
     if( !dir.exists() ) {
         dir.mkpath( logFileFolderPath );

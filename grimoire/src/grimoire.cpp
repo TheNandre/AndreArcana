@@ -10,6 +10,9 @@ Grimoire::Grimoire( QPointer<QWidget> parent )
       processExitManager_( std::make_unique<ProcessExitManager>() ),
       misfireManager_( std::make_unique<MisfireManager>() )
 {
+#if BUILD_LAB
+    frontCover_->setObjectName( "frontCover" );
+#endif
     frontCover_->open( this, SLOT( initialize() ) );
 }
 

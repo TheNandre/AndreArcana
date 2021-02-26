@@ -4,7 +4,12 @@
 #include <QMessageBox>
 #include <QPointer>
 
+#ifdef BUILD_LAB
+#include "grimoire_global.h"
+class GRIMOIRE_EXPORT Cover : public QMessageBox
+#else
 class Cover : public QMessageBox
+#endif
 {
     Q_OBJECT
 public:

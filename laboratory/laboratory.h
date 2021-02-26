@@ -14,6 +14,8 @@ public:
 
 private slots:
     void initTestCase();
+    void coverTest();
+    void misfireTest();
     void cleanupTestCase();
 
 private:

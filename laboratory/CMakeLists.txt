@@ -8,6 +8,10 @@ set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
 set(CMAKE_AUTOUIC ON)
 
+set(CMAKE_INCLUDE_CURRENT_DIR ON)
+
+enable_testing(true)
+
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 
@@ -24,6 +28,7 @@ set( LAB_SRCS
     laboratory.cpp)
 
 add_executable( ${PROJECT_NAME} ${LAB_HDRS} ${LAB_SRCS} )
+add_test(NAME ${PROJECT_NAME} COMMAND ${PROJECT_NAME} )
 
 target_link_libraries( ${PROJECT_NAME} ink grimoire )
 target_link_libraries( ${PROJECT_NAME} Qt6::Widgets Qt6::Test )

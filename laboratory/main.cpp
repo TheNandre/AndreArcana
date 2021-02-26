@@ -1,15 +1,12 @@
 #include <QApplication>
-
-#include "grimoire.h"
-#include "misfire.h"
+#include <QTest>
+#include "laboratory.h"
 
 int main( int argc, char* argv[] )
 {
     QApplication a{ argc, argv };
 
-    Grimoire g{};
-    g.showMaximized();
-    //Misfire misfire{ "Test" };
+    Laboratory lab{};
 
-    return a.exec();
+    return QTest::qExec( &lab, argc, argv );
 }
